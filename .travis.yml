@@ -1,0 +1,10 @@
+sudo: false
+language: python
+services:
+- "docker"
+env:
+  matrix:
+    - PYTHON_VERSION: 2.7
+script:
+  - sed -i -e "s/2.7/${PYTHON_VERSION}/" Dockerfile
+  - docker build --rm -t infrastructureascode/uwsgi .
