@@ -10,6 +10,6 @@ env:
     - PYTHON_VERSION: 3.5
     - PYTHON_VERSION: 3.6
 script:
-  - sed -i -e "s/2.7/${PYTHON_VERSION}/" Dockerfile
+  - sed -i -e "s/3.6/${PYTHON_VERSION}/" Dockerfile
   - docker build --rm -t infrastructureascode/uwsgi .
   - docker images
